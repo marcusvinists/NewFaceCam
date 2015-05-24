@@ -5,4 +5,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_visualizador">Visualizador</string>
     <string name="title_activity_about">about</string>
+    <string name="title_activity_manual">manual</string>
+    <string name="title_activity_manual1">manual1</string>
 </resources>

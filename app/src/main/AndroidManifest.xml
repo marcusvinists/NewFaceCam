@@ -24,6 +24,14 @@
             android:name=".about"
             android:label="@string/title_activity_about" >
         </activity>
+        <activity
+            android:name=".manual"
+            android:label="@string/title_activity_manual" >
+        </activity>
+        <activity
+            android:name=".manual1"
+            android:label="@string/title_activity_manual1" >
+        </activity>
     </application>
 
 </manifest>

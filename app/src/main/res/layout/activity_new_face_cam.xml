@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:text="Tirar Foto"
         android:id="@+id/button1"
-        android:layout_above="@+id/button"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
     <ImageView
@@ -28,8 +28,20 @@
         android:layout_height="wrap_content"
         android:text="About"
         android:id="@+id/button"
+        android:onClick="about"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="about"/>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manual"
+        android:id="@+id/button2"
+        android:layout_alignTop="@+id/button"
+        android:layout_alignRight="@+id/imageView"
+        android:layout_alignEnd="@+id/imageView"
+        android:onClick="manual"/>
 </RelativeLayout>
  

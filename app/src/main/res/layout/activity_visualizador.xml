@@ -4,11 +4,51 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.example.danielpacheco.newfacecam.Visualizador">
+    tools:context="com.example.danielpacheco.newfacecam.Visualizador"
+    android:id="@+id/visualizador">
 
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:id="@+id/imageView2" />
+        android:id="@+id/imageView2"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/button"
+        android:layout_above="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cinza"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inverter"
+        android:id="@+id/button2"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/button" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar"
+        android:layout_above="@+id/button"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/imageView2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Contraste"
+        android:id="@+id/textView"
+        android:layout_above="@+id/seekBar"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

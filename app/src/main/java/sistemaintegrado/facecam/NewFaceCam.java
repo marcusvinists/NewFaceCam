@@ -35,6 +35,9 @@ public class NewFaceCam extends ActionBarActivity {
     public void about(View v) {
         startActivity(new Intent(getBaseContext(), about.class));
     }
+    public void manual(View v) {
+        startActivity(new Intent(getBaseContext(), manual.class));
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
