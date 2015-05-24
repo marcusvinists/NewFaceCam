@@ -14,31 +14,28 @@ import java.io.ByteArrayOutputStream;
 
 public class NewFaceCam extends ActionBarActivity {
 
-
+    ImageView visuFoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_face_cam);
         Button button1 = (Button)findViewById(R.id.button1);
-        //seta a ação ao clicar no botão
+        visuFoto = (ImageView)findViewById(R.id.imageView);
         button1.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 iniciaCamera();
             }
         });
     }
-    //inicia o aplicativo nativo da camera
     public void iniciaCamera(){
         Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent, 0);
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        //Verifica se a foto foi tirada
-        if(resultCode== RESULT_OK) {
-            //Armazena a foto e a converte em um array de bytes para ser enviada via Intent para o visualizador
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK) {
             Bitmap foto = (Bitmap) data.getExtras().get("data");
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
             foto.compress(Bitmap.CompressFormat.PNG, 100, stream);
@@ -48,7 +45,7 @@ public class NewFaceCam extends ActionBarActivity {
             startActivity(intent);
             setContentView(R.layout.activity_visualizador);
         } else {
-            //cancelou a foto
+            //cancelado
         }
     }
 
