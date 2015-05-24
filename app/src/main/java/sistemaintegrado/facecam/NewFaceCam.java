@@ -32,6 +32,9 @@ public class NewFaceCam extends ActionBarActivity {
         Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(intent, 0);
     }
+    public void about(View v) {
+        startActivity(new Intent(getBaseContext(), about.class));
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

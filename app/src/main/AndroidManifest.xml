@@ -20,6 +20,10 @@
             android:name=".Visualizador"
             android:label="@string/title_activity_visualizador" >
         </activity>
+        <activity
+            android:name=".about"
+            android:label="@string/title_activity_about" >
+        </activity>
     </application>
 
 </manifest>
