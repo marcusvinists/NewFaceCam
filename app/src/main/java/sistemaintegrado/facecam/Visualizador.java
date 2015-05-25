@@ -3,6 +3,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.os.Environment;
 import android.provider.Settings;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -13,6 +14,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
+
+import java.io.File;
 
 public class Visualizador extends ActionBarActivity {
     public static Bitmap foto;
@@ -25,6 +28,7 @@ public class Visualizador extends ActionBarActivity {
         setContentView(R.layout.activity_visualizador);
         Button button = (Button)findViewById(R.id.button);
         Button button2 = (Button)findViewById(R.id.button2);
+        Button button5 = (Button)findViewById(R.id.button5);
         barraB = (SeekBar) findViewById(R.id.seekBar);
         barraB.setMax(255);
         barraB.setKeyProgressIncrement(1);
@@ -58,7 +62,7 @@ public class Visualizador extends ActionBarActivity {
         foto = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
         image = (ImageView) findViewById(R.id.imageView2);
         image.setImageBitmap(foto);
-        button.setOnClickListener(new View.OnClickListener(){
+        button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 image.setImageBitmap(tonsDeCiza(foto));
             }
@@ -66,6 +70,13 @@ public class Visualizador extends ActionBarActivity {
         button2.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 image.setImageBitmap(inverterCores(foto));
+            }
+        });
+        button5.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                //salvar imagem na galeria
+                File root = Environment.getExternalStorageDirectory();
+                File cachePath = new File(root.getAbsolutePath() + "/DCIM/Camera/image.jpg");
             }
         });
     }
@@ -182,6 +193,8 @@ public class Visualizador extends ActionBarActivity {
         // return final image
         return bmOut;
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
