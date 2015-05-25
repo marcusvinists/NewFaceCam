@@ -3,6 +3,7 @@ package sistemaintegrado.facecam;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.MediaPlayer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,9 +13,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import java.io.ByteArrayOutputStream;
 
+
 public class NewFaceCam extends ActionBarActivity {
 
     ImageView visuFoto;
+    
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +27,10 @@ public class NewFaceCam extends ActionBarActivity {
         Button button1 = (Button)findViewById(R.id.button1);
         visuFoto = (ImageView)findViewById(R.id.imageView);
         button1.setOnClickListener(new View.OnClickListener(){
+
             public void onClick(View v) {
                 iniciaCamera();
+
             }
         });
     }
